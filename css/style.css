@@ -28,7 +28,7 @@ body * {
 }
 
 .main-wrap > .title-wrap{
-    color:#000;
+    color:#fff;
     height: 50%;
     width: 100%;
     display: flex;
@@ -65,7 +65,7 @@ body * {
     background-color: red;
     border-radius: 15rem 15rem 0 0;
     border:5px solid #000;
-    
+    background-image: -webkit-radial-gradient(45% 40%,circle,rgba(0,0,0,.1) 50%,rgba(0,0,0,0.5) 100%);
 }
 
 .pokemonball-wrap > .pokemonball > .red-btn:hover,
@@ -83,7 +83,8 @@ body * {
     width:20%;
     height: 20%;
     border-radius: 50%;
-    border: 5px solid #000;
+    border: 10px solid #000;
+    background-image: -webkit-radial-gradient(20% 40%,circle,rgba(0,0,0,.1) 50%,rgba(0,0,0,0.5) 100%);
 }
 
 .pokemonball-wrap > .pokemonball > .white-btn{
@@ -93,7 +94,8 @@ body * {
     background-color: white;
     border-radius: 0 0 15rem 15rem;
     border:5px solid #000;
-    border-top:0;
+    /* border-top:0; */
+    background-image: -webkit-radial-gradient(45% 40%,circle,rgba(0,0,0,.1) 50%,rgba(0,0,0,0.5) 100%);
 }
 
 
