@@ -1,0 +1,13 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size:25px;
+    font-family:audiowide;
+}
+
+.header-wrap{
+    width:50%;
+    background-color: red;
+    height: 2.5rem;
+}
