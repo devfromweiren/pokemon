@@ -6,8 +6,22 @@ body{
     font-family:audiowide;
 }
 
+@font-face {
+    font-family: Audiowide;
+    src: url("../fonts/Audiowide-Regular.ttf");
+}
+
 .header-wrap{
     width:50%;
     background-color: red;
     height: 2.5rem;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrap > .header-text{
+    font-weight: 600;
+    color:#fff;
 }
