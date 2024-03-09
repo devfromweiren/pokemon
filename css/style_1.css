@@ -1,0 +1,250 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color:black;
+}
+
+body,
+body * {
+    box-sizing: border-box;
+    font-size: 25px;
+    font-family: audiowide;
+}
+
+@font-face {
+    font-family: Audiowide;
+    src: url("../fonts/Audiowide-Regular.ttf");
+}
+
+.main-wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: relative;
+
+    @media (max-width:768px) {
+        width: 100%;
+    }
+}
+
+.footer-wrap{
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    bottom:0;
+}
+
+/* index */
+
+.main-wrap>.title-wrap {
+    color: #fff;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-wrap>.title-wrap>* {
+    font-size: 2em;
+}
+
+.pokemonball-wrap {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
+}
+
+.pokemonball-wrap>.pokemonball {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pokemonball-wrap>.pokemonball>.red-btn {
+    height: 50%;
+    width: 100%;
+    display: block;
+    background-color: red;
+    border-radius: 15rem 15rem 0 0;
+    border: 5px solid #000;
+    background-image: radial-gradient(circle at 20%, #e7e7e7, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) 100%);
+}
+
+.pokemonball-wrap>.pokemonball>.red-btn:hover,
+.pokemonball-wrap>.pokemonball>.white-btn:hover,
+.pokemonball-wrap>.pokemonball>.midwhite:hover {
+    background-color: blue;
+}
+
+.pokemonball-wrap>.pokemonball>.midwhite {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: 10px solid #000;
+    background-image: -webkit-radial-gradient(20% 40%, circle, rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.pokemonball-wrap>.pokemonball>.white-btn {
+    height: 50%;
+    width: 100%;
+    display: block;
+    background-color: white;
+    border-radius: 0 0 15rem 15rem;
+    border: 5px solid #000;
+    /* border-top:0; */
+    background-image: radial-gradient(circle at 0%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* index */
+
+/* pokemonInfo */
+
+.image-wrap{
+    width: 100%;
+    height: 20vh;
+    position: relative;
+}
+
+.image-wrap > .image-position{
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    left:50%;
+    top: -2rem;
+    transform: translateX(-50%);
+}
+
+.image-position > img{
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    margin:auto;
+}
+
+.contain-wrap{
+    width: 100%;
+    height: calc(100vh - 20vh);
+    overflow: hidden;
+    padding:0 1rem;
+    padding-bottom:12vh;
+}
+
+.contain-wrap > .contain{
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    border-radius: 10px;
+    padding:0 2rem;
+    padding-top:5rem;
+    border:5px solid #fff;
+    box-shadow: 0.2rem 0.2rem 0rem 0.1rem #fff;
+}
+
+.contain-overflow{
+    overflow-y: auto;
+    height: 100%;
+}
+
+.contain-overflow::-webkit-scrollbar{
+    width: 0;
+}
+
+.contain-wrap .info-wrap , .attribute-wrap{
+    width:100%;
+    color:#fff;
+}
+.contain-wrap .info-wrap p{
+    padding:0.5rem 0;
+}
+
+.no{
+    font-size: 0.9rem;
+    
+}
+
+.name{
+    font-weight: 600;
+}
+
+.attribute-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.attribute-wrap .attribute{
+    flex:0 0 50%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.attribute-wrap .attribute .attribute-name{
+    border:2px solid #fff;
+    border-radius: 10px;
+    width: 95%;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.attribute-name.water{
+    background-color: rgba(135,206,235,.8);
+}
+
+.attribute-name.dark{
+    background-color: rgba(0,0,0,.8);
+}
+
+.attribute-name.grass{
+    background-color: rgba(173,255,47,.8);
+}
+
+.attribute-name.fight{
+    background-color: rgba(165,42,42,.8);
+}
+
+.attribute-name.insect{
+    background-color: rgba(0,128,0,.8);
+}
+
+.attribute-name.goblin{
+    background-color: rgba(255,192,203,.8);
+}
+
+.attribute-name.electricity{
+    background-color: rgba(255,255,0,.8);
+}
+
+.battle-wrap{
+    width:100%;
+    color:#fff;
+    padding: 0.5rem 0;
+
+}
+
+.battle-wrap > .title{
+    font-weight: 600;
+}
+
+
+
+
+/* pokemonInfo */

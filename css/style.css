@@ -1,93 +1,320 @@
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color:black;
-}
+/* setting */
 
-body,
-body * {
-    box-sizing: border-box;
-    font-size: 25px;
-    font-family: audiowide;
+:root {
+    --bg1: #141718;
+    --bg2: rgba(26, 26, 26, 8);
+    --goblin: #F063FD;
+    --normal:gray;
+    --fire:orange;
+    --water:#3AB8F8;
+    --elec:yellow;
+    --grass:green;
+    --ice:skyblue;
+    --fighter:red;
+    --poison:purple;
+    --ground:rgb(119, 113, 33);
+    --fly:skyblue;
+    --super:pink;
+    --insect:green;
+    --rock:yellow;
+    --ghost:purple;
+    --dragon:blue;
+    --dark:#221D1D;
 }
 
 @font-face {
     font-family: Audiowide;
-    src: url("../fonts/Audiowide-Regular.ttf");
+    src: url('../fonts/Audiowide-Regular.ttf');
+}
+
+@font-face {
+    font-family: YuseiMagic;
+    src: url('../fonts/YuseiMagic-Regular.ttf');
+}
+
+/* setting */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg1);
+    position: relative;
+    font-family: Audiowide, YuseiMagic;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.bg-2 {
+    width: 100%;
+    height: 60%;
+    background-color: var(--bg2);
+    position: absolute;
+    bottom: 0;
+    display: block;
+    border: 0;
+}
+
+.bg-2::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 0px solid transparent;
+    border-bottom: 25vh solid var(--bg2);
+    border-left: 100vw solid transparent;
+    position: absolute;
+    bottom: calc(100% - 1px);
+    left: 0;
+    z-index: -1;
+}
+
+.bg-2::before {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 0px solid transparent;
+    border-bottom: 25vh solid rgba(255, 255, 255, .5);
+    border-left: 100vw solid transparent;
+    position: absolute;
+    bottom: calc(100% + 1px);
+    right: 0;
+    z-index: -1;
 }
 
 .main-wrap {
     width: 100%;
     height: 100%;
-    background-color: #000;
+    overflow: hidden;
     position: relative;
-
-    @media (max-width:768px) {
-        width: 100%;
-    }
 }
 
-.footer-wrap{
-    position: absolute;
+.img-wrap , .showInfo-wrap{
     width: 100%;
-    height: 10vh;
-    background-color: #fff;
-    z-index: 1;
-    border-radius: 10px 10px 0 0;
-    bottom:0;
+    height: 40vh;
+    position: absolute;
+    top: 0;
 }
 
-/* index */
+.showInfo-wrap{
+    height: 45vh;
+    padding:1.5rem;
+    overflow-y: auto;
+}
 
-.main-wrap>.title-wrap {
+.img-wrap>img {
+    display: block;
+    object-fit: fill;
+    width: 100%;
+}
+
+.info-wrap {
+    width: 100%;
+    height: 65vh;
+    position: absolute;
+    bottom: 0;
+    padding: 0 1.5rem;
+}
+
+.text-wrap {
+    width: 100%;
+    line-height: 2;
     color: #fff;
-    height: 45%;
+    font-size: 1.8rem;
+    text-align: right;
+}
+
+.text-wrap .name {
+    font-size: 2.5rem;
+}
+
+.attribute-wrap , .pick-wrap {
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.main-wrap>.title-wrap>* {
-    font-size: 2em;
+.pick-wrap > .attribute{
+    flex:0 0 33.3%;
+    text-align: center;
+    padding: 0.5rem;
 }
 
-.pokemonball-wrap {
+.attribute-wrap>.attribute {
+    flex: 0 0 50%;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.attribute.water>span {
+    background-color: var(--water);
+}
+.attribute.dark>span {
+    background-color: var(--dark);
+}
+.attribute.goblin>span {
+    background-color: var(--goblin);
+}
+.attribute.normal>span {
+    background-color: var(--normal);
+}
+.attribute.fire>span {
+    background-color: var(--fire);
+}
+.attribute.elec>span {
+    background-color: var(--elec);
+}
+.attribute.grass>span {
+    background-color: var(--grass);
+}
+.attribute.ice>span {
+    background-color: var(--ice);
+}
+.attribute.fighter>span {
+    background-color: var(--fighter);
+}
+.attribute.poison>span {
+    background-color: var(--poison);
+}
+.attribute.ground>span {
+    background-color: var(--ground);
+}
+.attribute.fly>span {
+    background-color: var(--fly);
+}
+.attribute.super>span {
+    background-color: var(--super);
+}
+.attribute.insect>span {
+    background-color: var(--insect);
+}
+.attribute.rock>span {
+    background-color: var(--rock);
+}
+.attribute.ghost>span {
+    background-color: var(--ghost);
+}
+.attribute.dragon>span {
+    background-color: var(--dragon);
+}
+.attribute.iron>span {
+    background-color: var(--iron);
+}
+
+.attribute>span {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 100%;
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 15rem;
-    height: 15rem;
-    overflow: hidden;
 }
 
-.pokemonball-wrap>.pokemonball {
+.picker-wrap {
+    width: 100%;
+    border-top:1px solid #fff;
+    box-shadow: 0 0.2rem 0.5rem 0.5rem #fff;
+}
+
+.battle-wrap{
+    padding-top:2rem;
+}
+
+.title-wrap {
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.footer-wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.footer-wrap>.input-wrap {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding:0 1rem;
+}
+
+.footer-wrap>.pokemonball-tool {
+    flex: 0 0 4rem;
+    height: 4rem;
+    position: relative;
+}
+
+.footer-wrap>.input-wrap>.search {
+    display: block;
+    width: 100%;
+    line-height: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: var(--bg1);
+    border: 2px solid var(--bg2);
+    border-radius: 10px;
+    padding: 0 1rem;
+    box-shadow: inset 0 0 0.1rem 0.1rem #404040;
+    outline: 5px var(--bg2);
+}
+
+.pokemonball {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
+    animation:1.5s ease shake infinite;
+    z-index: 2;
 }
 
-.pokemonball-wrap>.pokemonball>.red-btn {
+@keyframes shake{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    30%{
+        transform: rotate(25deg);
+    }
+
+    60%{
+        transform: rotate(-25deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.pokemonball>.red-btn {
     height: 50%;
     width: 100%;
     display: block;
     background-color: red;
     border-radius: 15rem 15rem 0 0;
-    border: 5px solid #000;
+    border: 2px solid var(--bg2);
     background-image: radial-gradient(circle at 20%, #e7e7e7, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) 100%);
 }
 
-.pokemonball-wrap>.pokemonball>.red-btn:hover,
-.pokemonball-wrap>.pokemonball>.white-btn:hover,
-.pokemonball-wrap>.pokemonball>.midwhite:hover {
-    background-color: blue;
-}
-
-.pokemonball-wrap>.pokemonball>.midwhite {
+.pokemonball>.midwhite {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -96,155 +323,284 @@ body * {
     width: 20%;
     height: 20%;
     border-radius: 50%;
-    border: 10px solid #000;
+    border: 2px solid var(--bg2);
     background-image: -webkit-radial-gradient(20% 40%, circle, rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, 0.5) 100%);
 }
 
-.pokemonball-wrap>.pokemonball>.white-btn {
+.pokemonball>.white-btn {
     height: 50%;
     width: 100%;
     display: block;
     background-color: white;
     border-radius: 0 0 15rem 15rem;
-    border: 5px solid #000;
+    border: 2px solid var(--bg2);
     /* border-top:0; */
     background-image: radial-gradient(circle at 0%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) 100%);
 }
 
-/* index */
+.pokemonball.jump{
+    bottom:0;
+    animation: 1.5s ease jump infinite;
+    position: absolute;
+}
 
-/* pokemonInfo */
+@keyframes jump{
+    0%{
+        bottom:0;
+    }
+    25%{
+        bottom:30%;
+    }
+    50%{
+        bottom:0;
+    }
+    75%{
+        bottom:10%;
+    }
+    100%{
+        bottom:0;
+    }
+}
 
-.image-wrap{
+.bg-block{
+    /* background-color: var(--bg2); */
     width: 100%;
-    height: 20vh;
+    height: 100%;
+    z-index: 1;
     position: relative;
 }
 
-.image-wrap > .image-position{
-    width: 20rem;
-    height: 20rem;
+.tool-wrap{
     position: absolute;
-    left:50%;
-    top: -2rem;
-    transform: translateX(-50%);
+    bottom:0;
+    width:100%;
+    height: 100%;
 }
 
-.image-position > img{
-    height: 100%;
-    object-fit: fill;
+.tool-wrap > div{
     display: block;
-    margin:auto;
-}
-
-.contain-wrap{
     width: 100%;
-    height: calc(100vh - 20vh);
-    overflow: hidden;
-    padding:0 1rem;
-    padding-bottom:12vh;
-}
-
-.contain-wrap > .contain{
-    background-color: #000;
-    height: 100%;
-    width: 100%;
-    overflow-y: hidden;
-    border-radius: 10px;
-    padding:0 2rem;
-    padding-top:5rem;
-    border:5px solid #fff;
-    box-shadow: 0.2rem 0.2rem 0rem 0.1rem #fff;
-}
-
-.contain-overflow{
-    overflow-y: auto;
-    height: 100%;
-}
-
-.contain-overflow::-webkit-scrollbar{
-    width: 0;
-}
-
-.contain-wrap .info-wrap , .attribute-wrap{
-    width:100%;
-    color:#fff;
-}
-.contain-wrap .info-wrap p{
-    padding:0.5rem 0;
-}
-
-.no{
-    font-size: 0.9rem;
-    
-}
-
-.name{
-    font-weight: 600;
-}
-
-.attribute-wrap{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.attribute-wrap .attribute{
-    flex:0 0 50%;
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem 0;
-}
-
-.attribute-wrap .attribute .attribute-name{
-    border:2px solid #fff;
-    border-radius: 10px;
-    width: 95%;
-    line-height: 1.5;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.attribute-name.water{
-    background-color: rgba(135,206,235,.8);
-}
-
-.attribute-name.dark{
-    background-color: rgba(0,0,0,.8);
-}
-
-.attribute-name.grass{
-    background-color: rgba(173,255,47,.8);
-}
-
-.attribute-name.fight{
-    background-color: rgba(165,42,42,.8);
-}
-
-.attribute-name.insect{
-    background-color: rgba(0,128,0,.8);
-}
-
-.attribute-name.goblin{
-    background-color: rgba(255,192,203,.8);
-}
-
-.attribute-name.electricity{
-    background-color: rgba(255,255,0,.8);
-}
-
-.battle-wrap{
-    width:100%;
-    color:#fff;
-    padding: 0.5rem 0;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    transition: ease 0.5s;
+    bottom:0;
 
 }
 
-.battle-wrap > .title{
-    font-weight: 600;
+.tool-wrap.show > .l1{
+    bottom:calc(100% + 10px);
+
+}
+
+.tool-wrap.show > .l2{
+    bottom:calc(200% + 20px);
+}
+
+.tool-wrap.show > .l3{
+    bottom:calc(300% + 30px);
+}
+
+.tool-wrap.show > .l4{
+    bottom:calc(400% + 40px);
+}
+
+.tool-wrap.show > .l5{
+    bottom:calc(500% + 50px);
+}
+
+.tool-wrap.show > div{
+    visibility:visible;
+}
+
+.skull{
+    content:'';
+    /* background-image: url(../svgs/skull.svg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    width: 70%;
+    height: 70%;
+    /* border-radius: 50% important; */
+    fill: fill ;
+    stroke:2px solid var(--bg2);
+    background-color: transparent;
+    text-align: center;
 }
 
 
+.picker-wrap {
+    width: 100%;
+    height: 55vh;
+    position: absolute;
+    bottom: 0;
+    padding: 0 1.5rem;
+}
+/* 
+.attribute.goblin>span {
+    background-color: #F063FD;
+}
 
+.attribute>span {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+} */
 
-/* pokemonInfo */
+.pick-wrap > .attribute.goblin > span {
+    background-color: transparent;
+    color:var(--goblin);
+    border-color: var(--goblin);
+}
+.pick-wrap > .attribute.normal > span {
+    background-color: transparent;
+    color:var(--normal);
+    border-color: var(--normal);
+}
+.pick-wrap > .attribute.fire > span {
+    background-color: transparent;
+    color:var(--fire);
+    border-color: var(--fire);
+}
+.pick-wrap > .attribute.water > span {
+    background-color: transparent;
+    color:var(--water);
+    border-color: var(--water);
+}
+.pick-wrap > .attribute.elec > span {
+    background-color: transparent;
+    color:var(--elec);
+    border-color: var(--elec);
+}
+.pick-wrap > .attribute.grass > span {
+    background-color: transparent;
+    color:var(--grass);
+    border-color: var(--grass);
+}
+.pick-wrap > .attribute.ice > span {
+    background-color: transparent;
+    color:var(--ice);
+    border-color: var(--ice);
+}
+.pick-wrap > .attribute.fighter > span {
+    background-color: transparent;
+    color:var(--fighter);
+    border-color: var(--fighter);
+}
+.pick-wrap > .attribute.poison > span {
+    background-color: transparent;
+    color:var(--poison);
+    border-color: var(--poison);
+}
+.pick-wrap > .attribute.ground > span {
+    background-color: transparent;
+    color:var(--ground);
+    border-color: var(--ground);
+}
+.pick-wrap > .attribute.fly > span {
+    background-color: transparent;
+    color:var(--fly);
+    border-color: var(--fly);
+}
+.pick-wrap > .attribute.super > span {
+    background-color: transparent;
+    color:var(--super);
+    border-color: var(--super);
+}
+.pick-wrap > .attribute.insect > span {
+    background-color: transparent;
+    color:var(--insect);
+    border-color: var(--insect);
+}
+.pick-wrap > .attribute.rock > span {
+    background-color: transparent;
+    color:var(--rock);
+    border-color: var(--rock);
+}
+.pick-wrap > .attribute.ghost > span {
+    background-color: transparent;
+    color:var(--ghost);
+    border-color: var(--ghost);
+}
+.pick-wrap > .attribute.dragon > span {
+    background-color: transparent;
+    color:var(--dragon);
+    border-color: var(--dragon);
+}
+.pick-wrap > .attribute.dark > span {
+    background-color: transparent;
+    color:var(--dark);
+    border-color: var(--dark);
+}
+.pick-wrap > .attribute.iron > span {
+    background-color: transparent;
+    color:var(--iron);
+    border-color: var(--iron);
+}
+
+.pick-wrap > .attribute.picker > span{
+    color: #fff ;
+    border-color: #fff ;
+}
+
+.pick-wrap > .attribute.picker.goblin > span {
+    background-color:var(--goblin);
+}
+.pick-wrap > .attribute.picker.normal > span {
+    background-color: var(--normal);
+}
+.pick-wrap > .attribute.picker.fire > span {
+    background-color: var(--fire);
+}
+.pick-wrap > .attribute.picker.water > span {
+    background-color: var(--water);
+
+}
+.pick-wrap > .attribute.picker.elec > span {
+    background-color: var(--elec);
+
+}
+.pick-wrap > .attribute.picker.grass > span {
+    background-color: var(--grass);
+
+}
+.pick-wrap > .attribute.picker.ice > span {
+    background-color: var(--ice);
+}
+.pick-wrap > .attribute.picker.fighter > span {
+    background-color: var(--fighter);
+}
+.pick-wrap > .attribute.picker.poison > span {
+    background-color: var(--poison);
+}
+.pick-wrap > .attribute.picker.ground > span {
+    background-color: var(--ground);
+}
+.pick-wrap > .attribute.picker.fly > span {
+    background-color: var(--fly);
+}
+.pick-wrap > .attribute.picker.super > span {
+    background-color: var(--super);
+}
+.pick-wrap > .attribute.picker.insect > span {
+    background-color: var(--insect);
+}
+.pick-wrap > .attribute.picker.rock > span {
+    background-color: var(--rock);
+}
+.pick-wrap > .attribute.picker.ghost > span {
+    background-color: var(--ghost);
+}
+.pick-wrap > .attribute.picker.dragon > span {
+    background-color: var(--dragon);
+}
+.pick-wrap > .attribute.picker.dark > span {
+    background-color: var(--dark);
+}
+.pick-wrap > .attribute.picker.iron > span {
+    background-color: var(--iron);
+}

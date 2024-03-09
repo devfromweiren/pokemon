@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0CA">
+    <title>Pokemon</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Pokemon</title>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/script.js"></script>
 </head>
-
 <body>
-
+    <div class="bg-2"></div>
     <main class="main-wrap">
-        <div class="image-wrap">
-            <div class="image-position">
-                <img src="./images/0658.png" alt="">
-            </div>
+        <div class="img-wrap">
+            <img src="./images/0658.png" alt="">
         </div>
-        <div class="contain-wrap">
-            <div class="contain">
-                <div class="contain-overflow">
-                    <div class="info-wrap">
-                        <p class="no">#0658</p>
-                        <p class="name">甲賀忍蛙</p>
+        <div class="info-wrap">
+            <div class="text-wrap">
+                <p class="no">#0658</p>
+                <p class="name">甲賀忍蛙</p>
+            </div>
+            <div class="attribute-wrap">
+                <div class="attribute water">
+                    <span>水</span>
+                </div>
+                <div class="attribute dark">
+                    <span>惡</span>
+                </div>
+                <div class="attribute goblin">
+                    <span>妖精</span>
+                </div>
+            </div>
+            <div class="battle-wrap">
+                <div class="title-wrap">
+                    <p>弱點屬性</p>
+                </div>
+                <div class="attribute-wrap">
+                    <div class="attribute water">
+                        <span>水</span>
                     </div>
-                    <div class="attribute-wrap">
-                        <div class="attribute">
-                            <div class="attribute-name water">水</div>
-                        </div>
-                        <div class="attribute">
-                            <div class="attribute-name dark">惡</div>
-                        </div>
+                    <div class="attribute dark">
+                        <span>惡</span>
                     </div>
-                    <div class="battle-wrap">
-                        <div class="title">弱點屬性</div>
-                        <div class="attribute-wrap">
-                            <div class="attribute">
-                                <div class="attribute-name grass">草</div>
-                            </div>
-                            <div class="attribute">
-                                <div class="attribute-name electricity">電</div>
-                            </div>
-                            <div class="attribute">
-                                <div class="attribute-name fight">格鬥</div>
-                            </div>
-                            <div class="attribute">
-                                <div class="attribute-name insect">蟲</div>
-                            </div>
-                            <div class="attribute">
-                                <div class="attribute-name goblin">妖精</div>
-                            </div>
-                        </div>
+                    <div class="attribute goblin">
+                        <span>妖精</span>
                     </div>
-                    <div class="button-wrap"></div>
                 </div>
             </div>
         </div>
     </main>
-
     <footer class="footer-wrap">
+        <div class="input-wrap">
+            <input type="text" class="search" placeholder="search">
+        </div>
+        <div class="pokemonball-tool">
+            <div class="pokemonball jump">
+                <div class="red-btn"></div>
+                <div class="white-btn"></div>
+                <div class="midwhite"></div>
+            </div>
+            <!-- <div class="bg-block"></div> -->
+            <div class="tool-wrap">
+                <div class="battle l1">
+                    <svg class="skull" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9c0 .4 0 .7 0 1.1v64c0 26.5 21.5 48 48 48h48V464c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64V464c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48V400c0-.4 0-.7 0-1.1zM96 256a64 64 0 1 1 128 0A64 64 0 1 1 96 256zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
 
+                    </div>
+                <!-- <div class="battle2 l2">battle2</div>
+                <div class="battle3 l3">battle3</div>
+                <div class="battle4 l4">battle4</div>
+                <div class="battle5 l5">battle5</div> -->
+            </div>
+        </div>
     </footer>
 
 </body>
-
 </html>
