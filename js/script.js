@@ -1,4 +1,4 @@
-let AttributeRestraint;
+var AttributeRestraint;
 
 $(document).ready(function () {
     $('.pokemonball').on('click', function () {
