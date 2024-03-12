@@ -377,7 +377,7 @@ body * {
     height: 100%;
 }
 
-.tool-wrap > div{
+.tool-wrap > a{
     display: block;
     width: 100%;
     text-align: center;
