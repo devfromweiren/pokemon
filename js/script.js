@@ -7,6 +7,7 @@ $(document).ready(function () {
     })
 
     $('.tool-wrap > .battle').on('click', function () {
+        event.preventDefault();
         location.href = 'battle.html'
     })
 
