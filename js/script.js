@@ -17,10 +17,10 @@ $(document).ready(function () {
     })
 
     $.get('./json/AttributeRestraint.json',function(data,status){
-        AttributeRestraint = data;
+        console.log(data)
     })
 
-    console.log("AttributeRestraint= " + AttributeRestraint);
+   // console.log("AttributeRestraint= " + AttributeRestraint);
 })
 
 let attributeSort = ['normal', 'fire', 'water', 'elec', 'grass', 'ice', 'fighter', 'poison', 'ground', 'fly', 'super', 'insect', 'rock', 'ghost', 'dragon', 'dark', 'iron', 'globin']
