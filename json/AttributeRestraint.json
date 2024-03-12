@@ -7,6 +7,10 @@
         "efficient":["grass","elec"],
         "invalid":["water","fire","ice","iron"]
     },
+    "fire":{
+        "efficient":["water","ground","rock"],
+        "invalid":["fire","ice","globin","grass","iron","insect"]
+    },
     "ice":{
         "efficient":["fire","rock","fighter","iron"],
         "invalid":["ice"]
