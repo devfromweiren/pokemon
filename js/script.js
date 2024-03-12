@@ -17,8 +17,10 @@ $(document).ready(function () {
     })
 
     $.get('./json/AttributeRestraint.json',function(data,status){
-        console.log(data)
+        AttributeRestraint = data;
     })
+
+    console.log("AttributeRestraint= " + AttributeRestraint);
 })
 
 let attributeSort = ['normal', 'fire', 'water', 'elec', 'grass', 'ice', 'fighter', 'poison', 'ground', 'fly', 'super', 'insect', 'rock', 'ghost', 'dragon', 'dark', 'iron', 'globin']
@@ -28,17 +30,21 @@ let fail = 0.391
 
 function Battle() {
     let elements = [];
+    let efficientArray = 
 
     $('.picker-wrap .picker').each(function (index) {
         let value = $(this).data('value')
+
+        
+        
         if (!elements.includes(value)) {
             elements.push(value)
         }
     })
 
-    $.get('../json/AttributeRestraint.json',function(data,status){
-        
-    })
+
+
+    
 
     console.log(elements)
 }
